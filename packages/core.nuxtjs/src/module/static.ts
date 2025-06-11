@@ -87,7 +87,7 @@ async function setSpaLoadingTemplate(options: NuxtAppProps, nuxt: Nuxt) {
 export const statics = async (options: NuxtAppProps, nuxt: Nuxt) => {
   setSpaLoadingTemplate(options, nuxt);
 
-  if (!nuxt.options.nitro.static || (nuxt.options as any)._generate /* TODO: remove in future */) {
+  if (!(nuxt.options.nitro.static || (nuxt.options as any)._generate /* TODO: remove in future */)) {
     return;
   }
 
